@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Hello!</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+  </head>  
+  <body>
+    <a-scene>
+        <a-assets>
+            <!-- Model from Google Poly https://poly.google.com/view/eOEwsOqdcHl by Alex “SAFFY” Safayan -->
+            <a-asset-item id="lighthouse-obj" src="https://cdn.glitch.com/e8b5d783-bf86-4104-9d3b-92edbcf0eb86%2Fmodel-triangulated.obj?1536741656667"></a-asset-item>
+            <a-asset-item id="lighthouse-mtl" src="https://cdn.glitch.com/e8b5d783-bf86-4104-9d3b-92edbcf0eb86%2Fmaterials.mtl?1536741988245"></a-asset-item>
+        </a-assets>
+        <a-entity obj-model="obj:#lighthouse-obj;mtl:#lighthouse-mtl" shadow="cast:true;receive:false" position="10.12 7.50 -5.38" scale="10 10 10"></a-entity>
+      
+      
+        <a-entity geometry="primitive:plane;height:500;width:500" position="5 -2.48 -5" rotation="-90 0 0" material="color:#00a5ae;roughness:1"></a-entity>
+        <a-entity geometry="primitive:box;depth:20;height:20;width:20" shadow="cast:false;receive:true;" position="4 -9.94 0.80" material="color:#449b5b;roughness:1"></a-entity>
+        
+        <a-light light="type:ambient;intensity:0.2;color:skyblue"></a-light>
+        <a-light position="-1 18 -14" light="color:#ffe6ba;castShadow:true;shadowCameraNear:1;shadowCameraTop:10;shadowCameraBottom:-10;shadowCameraLeft:-20;shadowMapHeight:1024;shadowMapWidth:1024;shadowBias:0.1;shadowCameraRight:10;penumbra:1">
+            <a-sphere material="shader:flat;color:white;"></a-sphere>
+        </a-light>
+        <a-sky color="#ffc368"></a-sky>
+    </a-scene>
+    
+  </body>
+</html>
+
